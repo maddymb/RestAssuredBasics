@@ -1,14 +1,9 @@
 package Basics;
 
-import static org.testng.Assert.assertEquals;
-
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
-import io.restassured.authentication.PreemptiveAuthProvider;
 import io.restassured.authentication.PreemptiveBasicAuthScheme;
-import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
@@ -32,6 +27,8 @@ public class TC03_Auth_Request {
 		Response response = request.get();
 		System.out.println("Status code: " + response.getStatusCode());
 		System.out.println("Status message " + response.body().asString());
+		System.out.println("Status message " + authScheme.getPassword());
+		
 		
 	}
 	
